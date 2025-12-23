@@ -20,9 +20,24 @@ Map defaults to ne for up and sw for down for mapping purposes so the map is 2D 
 
 Configs:
 
+kmap object action arguments
+kmap object (show)
+
+kmap start (area or map.currentArea)
+    - Starts mapping in an area (pre-existing, exact match) or in map.currentArea
+kmap stop
+    - Stops mapping
+kmap save
+    - save map (and json map) to kmapdata dir (for gitification)
+
 kmap mode two, one, maze
     - Sets the mode of map to connect rooms in both directions (generic_mapper normal mode), one direction (generic_mapper complex mode), or maze mode (no linking + stuff)
 kmap loglevel quiet, error, info, debug, trace
     - Determines how noisy the mapper is with echos.
-kmap movemethod add
-kmap movemethod del
+kmap movemethod mv
+    - Add if not present, remove if present
+kmap character name
+    - Set, isn't saved.
+kmap speedwalk on|off
+    - Toggles on empty
+kmap arealock?

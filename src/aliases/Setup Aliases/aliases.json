@@ -7,30 +7,9 @@
               "isFolder": "no"
        },
        {
-              "name": "Map Debug Alias",
-              "isActive": "yes",
-              "regex": "^map debug$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Map Update Alias",
-              "isActive": "yes",
-              "regex": "^map update$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Map Config Alias",
               "isActive": "yes",
               "regex": "^map config(?: ([\\w\\s\\.]+))?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Map Translate Config Alias",
-              "isActive": "yes",
-              "regex": "^map translate (\\w+) (\\w+) (\\w+)$",
               "script": "",
               "isFolder": "no"
        }
