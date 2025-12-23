@@ -7,13 +7,6 @@
               "isFolder": "no"
        },
        {
-              "name": "Load Map Alias",
-              "isActive": "yes",
-              "regex": "^map load(?: (.*))?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Import Map Area Alias",
               "isActive": "yes",
               "regex": "^map import (.*)",

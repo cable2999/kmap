@@ -1727,22 +1727,6 @@ local function find_area(name)
     map.set("currentArea", areaID)
 end
 
-function map.load_map(address)
-    traceFunc()
-    local path = kmapPath .. "/map.dat"
-    if not address then
-        loadMap(path)
-        map.log("Map reloaded from local copy.", "INFO")
-    else
-        if not string.match(address,"/[%a_]+%.dat$") then
-            address = address .. "/map.dat"
-        end
-        downloading = true
-        downloadFile(path, address)
-        map.log(string.format("Downloading map file from: %s.",address), "INFO")
-    end
-end
-
 function map.set_exit(dir,roomID)
     traceFunc()
     -- used to set unusual exits from the room you are standing in
