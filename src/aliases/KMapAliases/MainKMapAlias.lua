@@ -31,6 +31,15 @@ if object == "area" then
         map.deleteArea(args, true)
     elseif action == "list" then
         map.echoAreaList()
+    elseif action == "create" then
+        -- area add <area name> - will create a new area and automatically give it an ID.
+
+        local t = getAreaTable(); local tr = {}; for k,v in pairs(t) do tr[v] = k end
+        local newid = table.maxn(tr) + 1
+
+        setAreaName( newid, args )
+        map.log(string.format("Created new area %s (%d), but shouldn't you use the area command?", args, newid). "INFO")
+        centerview(map.currentRoom)
     end
 end
 
@@ -51,7 +60,6 @@ end
 if object == "room" then
     local action = kmaparray[2]
     local args = table.concat(kmaparray, " ", 3, table.size(kmaparray))
-    display(args)
     if action == "show" then
         if args == "" then args = nil end
         map.echoRoomList(args or getRoomArea(map.currentRoom))
@@ -68,6 +76,11 @@ if object == "room" then
     end
 end
 
-        
-    
-
+if object == "move" then
+    local action = kmaparray[2]
+    local args = table.concat(kmaparray, " ", 3, table.size(kmaparray))
+    if action == "show" then
+        map.show_moves()
+    elseif action == "clear" then
+        map.clear_moves()
+    end

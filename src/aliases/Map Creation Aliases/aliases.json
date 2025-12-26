@@ -1,12 +1,5 @@
 [
        {
-              "name": "Set Room Area Alias",
-              "isActive": "yes",
-              "regex": "^set area (.*)$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Shift Room Alias",
               "isActive": "yes",
               "regex": "^shift (.*)$",
@@ -21,30 +14,9 @@
               "isFolder": "no"
        },
        {
-              "name": "Show Moves Alias",
-              "isActive": "yes",
-              "regex": "^show moves$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Clear Moves Alias",
-              "isActive": "yes",
-              "regex": "^clear moves$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Add Door Alias",
               "isActive": "yes",
               "regex": "^add door (\\w+)(?: (none|open|closed|locked))?(?: (yes|no))?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Merge Rooms Alias",
-              "isActive": "yes",
-              "regex": "^merge rooms$",
               "script": "",
               "isFolder": "no"
        },
@@ -63,30 +35,9 @@
               "isFolder": "no"
        },
        {
-              "name": "Move A Room Alias",
-              "isActive": "yes",
-              "regex": "^(?:rc|room coords) (?:v(\\d+) )?(.+)$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Delete A Room Alias",
-              "isActive": "yes",
-              "regex": "^(?:rld|room delete) ?(\\w+)?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Set Room Weight Alias",
               "isActive": "yes",
               "regex": "^rw(?: (\\w+))? (\\d+)$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Set Exit Weight Alias",
-              "isActive": "yes",
-              "regex": "^rwe(?: (\\d+))? (\\d+) (.+)$",
               "script": "",
               "isFolder": "no"
        },
@@ -136,34 +87,6 @@
               "name": "Clear All Special Exits Alias",
               "isActive": "yes",
               "regex": "^(?:spe clear|exit special clear) ?(\\w+)?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Add a Room Label Alias",
-              "isActive": "yes",
-              "regex": "^room label (.+)$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "View or delete Area Labels Alias",
-              "isActive": "yes",
-              "regex": "^area labels ?(.+)?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Create An Area Alias",
-              "isActive": "yes",
-              "regex": "^area add (.+)$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Delete An Area Alias",
-              "isActive": "yes",
-              "regex": "^area delete (.+)$",
               "script": "",
               "isFolder": "no"
        },
