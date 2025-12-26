@@ -153,8 +153,10 @@ map.help.kmap_room = [[
 
         show:  Shows list of rooms in current area or provided area
         find:  Finds room by room name.
-        merge: Merges overlapping rooms if room names match.  Doesn't always do the right thing with exits.
-        mergedn:  Merges overlapping rooms regardless of room name match.  Use for rooms that change by time of day.
+        merge: Merges overlapping rooms if room names match.  
+            Doesn't always do the right thing with exits.
+        mergedn:  Merges overlapping rooms regardless of room name match.  
+            Use for rooms that change by time of day.
         area:  Move current room to provided area.
         shift: Shift current room in direction.
 ]]
