@@ -216,14 +216,6 @@ map.help.start_mapping = [[
         without an area name, the room is not moved, and mapping begins in the
         area the character is currently located in.
 ]]
-map.help.stop_mapping = [[
-    <cyan>Stop Mapping<reset>
-        syntax: <yellow>stop mapping<reset>
-
-        This command instructs the script to stop adding new content until
-        mapping is resumed at a later time. The map will continue to perform
-        other functions.
-]]
 map.help.debug = [[
     <cyan>Map Debug<reset>
         syntax: <yellow>map debug<reset>
@@ -1974,12 +1966,6 @@ function map.start_mapping(area_name)
     elseif map.currentRoom and map.currentArea ~= getRoomArea(map.currentRoom) then
         map.set_area(area_name)
     end
-end
-
-function map.stop_mapping()
-    traceFunc()
-    map.set("mapping", false)
-    map.log("Mapping off.", "INFO")
 end
 
 function map.clear_moves()

@@ -7,20 +7,6 @@
               "isFolder": "no"
        },
        {
-              "name": "Start Mapping Alias",
-              "isActive": "yes",
-              "regex": "^start mapping(?: (.*))?$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
-              "name": "Stop Mapping Alias",
-              "isActive": "yes",
-              "regex": "^stop mapping$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Shift Room Alias",
               "isActive": "yes",
               "regex": "^shift (.*)$",

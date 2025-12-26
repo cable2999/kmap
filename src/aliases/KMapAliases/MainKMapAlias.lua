@@ -15,4 +15,11 @@ if object == "area" then
     elseif action == "list" then
         map.echoAreaList()
     end
+    if action == "start" then
+        map.start_mapping(args)
+    end
+    if action == "stop" then
+        raiseEvent("mapStop")
+        raiseEvent("sysSpeedwalkStopped")
+    end
 end
