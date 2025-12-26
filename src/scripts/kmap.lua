@@ -7,7 +7,7 @@ mudlet.mapper_script = true
 map = map or {}
 
 map.help = {[[
-    <cyan>Generic Map Script<reset>
+    <cyan>KMap Script<reset>
 
     This script allows for semi-automatic mapping using the included triggers.
     While different games can have dramatically different ways of displaying
@@ -34,8 +34,6 @@ map.help = {[[
             command given.
         <link: movemethod>map movemethod <word></link> - Adds a movement method for the script to
             look for when mapping.
-        <link: debug>map debug</link> - Toggles on debug mode, in which extra messages are shown with
-            the intent of assisting in troubleshooting getting the script setup.
         <link: me>map me</link> - Locates the user on the map, if possible.
         <link: path>map path <room name> [; area name]</link> - Finds a walking path to the named
             room, in the named area if specified.
@@ -215,16 +213,6 @@ map.help.start_mapping = [[
         moved to be in the named area, if it is not already in it. If used
         without an area name, the room is not moved, and mapping begins in the
         area the character is currently located in.
-]]
-map.help.debug = [[
-    <cyan>Map Debug<reset>
-        syntax: <yellow>map debug<reset>
-
-        This command toggles the map script's debug mode on or off when it is
-        used. Debug mode provides some extra messages to help with setting up
-        the script and identifying problems to help with troubleshooting. If you
-        are getting assistance with setting up this script, using debug mode may
-        make the process faster and easier.
 ]]
 map.help.movemethod = [[
     <cyan>Move Method<reset>
@@ -503,9 +491,6 @@ map.help.config = [[
         <yellow>use_translation<reset> - When this is set, the lang_dirs table is used to
             translate movement and status commands in some other language
             into the English used by the script. This may be true or false.
-
-        <yellow>debug<reset> - When this is set, the script will start in debug mode. This
-            may be true or false.
 ]]
 map.help.translate = [[
     <yellow>Map Translate<reset>
@@ -530,10 +515,6 @@ map.help.quick_start = [[
     1. <link: start mapping>start mapping <optional area name></link>
        If both room name and exits are good, you can start mapping! Give it the
        area name you're currently in, usually optional but required for the first one.
-    3. <link: debug>map debug</link>
-       This toggles debug mode. When on, messages will be displayed showing what
-       information is captured and a few additional error messages that can help
-       with getting the script fully compatible with your game.
     4. <link: 1>map help</link>
        This will bring up a more detailed help file, starting with the available
        help topics.
@@ -921,7 +902,6 @@ map.defaults = {
         sd = 'sd', su = 'su', southdown = 'southdown', southup = 'southup',
         wd = 'wd', wu = 'wu', westdown = 'westdown', westup = 'westup',
     },
-    debug = false,
     loglevel = LOG_LEVELS.TRACE,
 }
 
@@ -1098,7 +1078,7 @@ function map.show_help(cmd)
 end
 
 local bool_configs = {'stretch_map', 'search_on_look', 'speedwalk_wait', 'speedwalk_random',
-    'clear_lines_on_send', 'debug', 'custom_name_search', 'use_translation'}
+    'clear_lines_on_send', 'custom_name_search', 'use_translation'}
 -- function intended to be used by an alias to change config values and save them to a file for later
 
 function map.setConfigs(key, val, sub_key)
@@ -1157,38 +1137,6 @@ function map.setConfigs(key, val, sub_key)
     --table.save(kmapPath.."/configs.lua",map.configs)
     writejsonalphasort(map.configs, kmapPath.."/configs.json")
     config()
-end
-
-local function print_echoes(what, debug, err)
-    traceFunc()
-    moveCursorEnd("main")
-    local curline = getCurrentLine()
-    if curline ~= "" then echo("\n") end
-    decho(mapper_tag)
-    if debug then decho(debug_tag) end
-    if err then decho(err_tag) end
-    cecho(what)
-    echo("\n")
-end
-
-local function print_wait_echoes()
-    traceFunc()
-    for k,v in ipairs(wait_echo) do
-        print_echoes(v[1],v[2],v[3])
-    end
-    wait_echo = {}
-end
-
-function map.echo(what, debug, err, wait)
-    traceFunc()
-    if debug and not map.configs.debug then return end
-    what = tostring(what) or ""
-    if wait then
-        table.insert(wait_echo,{what, debug, err})
-        return
-    end
-    print_wait_echoes()
-    print_echoes(what, debug, err)
 end
 
 local function print_log(what, level)
