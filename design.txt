@@ -40,6 +40,8 @@ kmap character name
     - Set, isn't saved.
 kmap speedwalk on|off
     - Toggles on empty
+kmap area get, del, list
+    - get areas from area command, delete area, list all areas.
 
 
 

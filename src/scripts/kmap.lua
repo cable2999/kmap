@@ -1711,7 +1711,8 @@ local function capture_room_info(name, exits)
 end
 
 local function find_area(name)
-    -- searches for the named area, and creates it if necessary
+    traceFunc()
+    -- searches for the named area
     local areas = getAreaTable()
     local areaID
     for k,v in pairs(areas) do
@@ -1720,7 +1721,7 @@ local function find_area(name)
             break
         end
     end
-    if not areaID then areaID = addAreaName(name) end
+    --if not areaID then areaID = addAreaName(name) end
     if not areaID then
         show_err("Invalid Area. No such area found, and area could not be added.",true)
     end
