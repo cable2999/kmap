@@ -2,7 +2,8 @@
        {
               "name": "GetAllAreas",
               "isActive": "yes",
+              "regex": "^kmap getareas$",
               "script": "",
-              "isFolder": "yes"
+              "isFolder": "no"
        }
 ]
