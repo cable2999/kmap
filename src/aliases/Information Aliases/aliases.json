@@ -21,13 +21,6 @@
               "isFolder": "no"
        },
        {
-              "name": "Map Areas Alias",
-              "isActive": "yes",
-              "regex": "^map areas$",
-              "script": "",
-              "isFolder": "no"
-       },
-       {
               "name": "Room Find Alias",
               "isActive": "yes",
               "regex": "^(?:rf|room find) (.+)$",
