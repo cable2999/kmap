@@ -1,9 +1,0 @@
-[
-       {
-              "name": "Show Path Alias",
-              "isActive": "yes",
-              "regex": "^showpath(?: (\\d+))?(?: (\\d+))?$",
-              "script": "",
-              "isFolder": "no"
-       }
-]

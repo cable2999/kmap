@@ -38,9 +38,10 @@ if object == "area" then
         local newid = table.maxn(tr) + 1
 
         setAreaName( newid, args )
-        map.log(string.format("Created new area %s (%d), but shouldn't you use the area command?", args, newid). "INFO")
+        map.log(string.format("Created new area %s (%d), but shouldn't you use the area command?", args, newid), "INFO")
         centerview(map.currentRoom)
     end
+    map.log("Unkown "..object.." command.", "ERROR")
 end
 
 if object == "loglevel" then
@@ -55,6 +56,7 @@ if object == "loglevel" then
             map.log("Log level must be one of "..table.concat(LOG_LEVELNAMES, " "), "ERROR")
         end
     end
+    map.log("Unkown "..object.." command.", "ERROR")
 end
 
 if object == "room" then
@@ -74,6 +76,7 @@ if object == "room" then
     elseif action == "area" then
         map.set_area(args)
     end
+    map.log("Unkown "..object.." command.", "ERROR")
 end
 
 if object == "move" then
@@ -84,3 +87,5 @@ if object == "move" then
     elseif action == "clear" then
         map.clear_moves()
     end
+    map.log("Unkown "..object.." command.", "ERROR")
+end
