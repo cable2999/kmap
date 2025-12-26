@@ -1,8 +1,8 @@
 [
        {
-              "name": "GetAllAreas",
+              "name": "MainKMapAlias",
               "isActive": "yes",
-              "regex": "^kmap getareas$",
+              "regex": "^kmap (.*)$",
               "script": "",
               "isFolder": "no"
        }
