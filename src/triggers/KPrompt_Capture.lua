@@ -1,0 +1,1 @@
+disableTrigger("KArea Capture Data")
