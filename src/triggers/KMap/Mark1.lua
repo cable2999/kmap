@@ -1,0 +1,1 @@
+cecho("<red> 1 <reset>")

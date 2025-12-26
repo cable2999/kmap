@@ -1,0 +1,314 @@
+[
+       {
+              "name": "KPrompt Capture",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "^\\\u003c(-?\\d+)%?\\/(-?\\d+)%?\\|(-?\\d+)%?\\/(-?\\d+)%?\\|(-?\\d+)%?\\/(-?\\d+)%?\\|(\\d+)\\|(-?\\d+.\\d+|-?inf)%\\|(?=|)(.*)(?=|)\\|(\\w+)\\|(\\w+)\\|(\\w+)\\|(\\d+):00\\|(\\d+):(\\d+):(\\d+)\\|(?=|)(.*)(?=|)\\|(?=|)(.*)(?=|)\\|(?=|)(.*)(?=|)\\|(?=|)(.*)(?=|)\\|(?=|)(.*)(?=|)\\|(.*)",
+                            "type": "regex"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "KFailed Move Trigger",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "^Alas, you cannot go that way.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^You can't hold your breath long enough to venture there!$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^You can't fly.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^No way!  You are still fighting!$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "says 'You aren't allowed in there!'",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^The tiny red door would barely admit a human child.  You are far too big to pass through it.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^The stairs leading to the giant black door are far too massive for you to climb.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "says 'You aren't allowed in there.",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^You need a boat to go there.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^The centurion blocks your path and tells you to pay the toll to pass.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^A dwarven gate guard says 'Dark tings stompin round down der little one, best if'n you jus' stays back fer now.'$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^A dwarven gate guard says 'Alas, you fear too much to go that way.  Maybe once you are more experienced.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^The Arkham guard says to you 'Careful, young one!  There's bandits and worse things in the dark places of the woods.'$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^A dark wall of trees blocks further passage.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^Large trees gather closely together, blocking further passage.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^Athach the lumberjack moves to block your entrance into the forest.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": ".*'You look rather bloody.  Perhaps you should rest a bit.'$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^You are too exhausted.$",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^In your dreams, or what\\?$",
+                            "type": "regex"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Follow Move Trigger",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "^You follow .* (\\w+).$",
+                            "type": "regex"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark1",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "A tangled ball of kelp blades has been left here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark2",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": " A cluster of small wild strawberries lies here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark3",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "A handful of blackcurrants still attached to the vine lies here",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark4",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "A handful of fleshy red fruit has been left here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark5",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "A handful of cattail shoots lie upon the ground.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark6",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "A large white mushroom has been left here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark7",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "Some fresh blackberries have been left here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark8",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "Some bright red bearberries have been left here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       },
+       {
+              "name": "Mark9",
+              "isActive": "yes",
+              "isFolder": "no",
+              "multiline": "no",
+              "multilineDelta": "0",
+              "matchall": "no",
+              "filter": "no",
+              "fireLength": "0",
+              "highlight": "no",
+              "highlightFG": "#ff0000",
+              "highlightBG": "#ffff00",
+              "patterns": [
+                     {
+                            "pattern": "A small handful of hickory nuts has been left here.",
+                            "type": "substring"
+                     }
+              ],
+              "script": ""
+       }
+]

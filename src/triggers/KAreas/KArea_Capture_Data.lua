@@ -1,7 +1,7 @@
-areaType = matches[2]
-areaLevels = matches[3]
-areaAuthor = matches[4]
-areaName = matches[5]
+local areaType = matches[2]
+local areaLevels = matches[3]
+local areaAuthor = matches[4]
+local areaName = matches[5]
 -- echo("Captured Area: ")
 -- echo(areaName)
 -- echo(areaAuthor)
