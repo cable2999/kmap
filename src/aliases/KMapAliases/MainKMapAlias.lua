@@ -19,7 +19,6 @@ elseif object == "save" then
     else
         map.log("Error.  Map NOT saved.\n", "ERROR")
     end
-				
 end
 
 if object == "area" then
@@ -34,5 +33,21 @@ if object == "area" then
         map.echoAreaList()
     end
 end
+
+if object == "loglevel" then
+    local action = kmaparray[2]
+    local args = table.concat(kmaparray, " ", 3, table.size(kmaparray))
+    if action == "show" then
+        map.log(LOG_LEVELNAMES[map.configs.loglevel], "INFO")
+    elseif action == "set" then
+        if table.contains(LOG_LEVELNAMES, string.upper(args)) then
+            map.setConfigs("loglevel", LOG_LEVELS[string.upper(args)])
+        else
+            map.log("Log level must be one of "..table.concat(LOG_LEVELNAMES, " "), "ERROR")
+        end
+    end
+end
+
+        
     
 

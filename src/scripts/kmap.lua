@@ -889,13 +889,15 @@ local profilePath = getMudletHomeDir()
 local kmapPath = profilePath.."/kmapdata"
 
 -- Quiet is no messages, including errors, so everything surpressed.  Then we go up from there.
-local LOG_LEVELS = {
-    QUIET = 0,
-    ERROR = 1,
-    INFO =  2,
-    DEBUG = 3,
-    TRACE = 4,
+LOG_LEVELS = {
+    QUIET = 1,
+    ERROR = 2,
+    INFO =  3,
+    DEBUG = 4,
+    TRACE = 5,
 }
+
+LOG_LEVELNAMES = { "QUIET", "ERROR", "INFO", "DEBUG", "TRACE"}
 
 map.defaults = {
     mode = "normal", -- can be lazy, simple, normal, or complex
