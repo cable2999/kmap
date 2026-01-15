@@ -1,0 +1,90 @@
+name: Build and Release KMap
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    # Only run if PR was merged (not just closed)
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Extract version from mfile
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.version' mfile)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version extracted: $VERSION"
+      
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if git rev-parse "v${{ steps.get_version.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Tag v${{ steps.get_version.outputs.version }} already exists"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Tag v${{ steps.get_version.outputs.version }} does not exist"
+          fi
+      
+      - name: Build mpackage with muddler
+        if: steps.check_tag.outputs.exists == 'false'
+        run: |
+          docker run --rm -v "$(pwd):/work" -w /work demonnic/muddler
+      
+      - name: Verify build output
+        if: steps.check_tag.outputs.exists == 'false'
+        run: |
+          if [ ! -d "build" ]; then
+            echo "Error: build directory not created"
+            exit 1
+          fi
+          if [ ! -f "build/kmap.mpackage" ]; then
+            echo "Error: kmap.mpackage not found in build directory"
+            ls -la build/
+            exit 1
+          fi
+          echo "Build successful!"
+          ls -lh build/
+      
+      - name: Create Release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: KMap v${{ steps.get_version.outputs.version }}
+          body: |
+            KMap Mudlet Package - Custom CF Mapping Script
+            
+            Version: ${{ steps.get_version.outputs.version }}
+            
+            ## Installation
+            Download `kmap.mpackage` and install it in Mudlet via the Package Manager.
+            
+            ## Changes
+            See commit history for details.
+          files: |
+            build/kmap.mpackage
+            build/kmap.xml
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Tag already exists
+        if: steps.check_tag.outputs.exists == 'true'
+        run: |
+          echo "Skipping release creation - tag v${{ steps.get_version.outputs.version }} already exists"
+          echo "To create a new release, update the version in mfile"
+
